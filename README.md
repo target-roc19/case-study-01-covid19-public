@@ -24,7 +24,7 @@ The analytic pipeline is conceptualised as a series of transformations (denoted 
 
 ![pipeline](docs/VAC4EU-PIPELINE.png)
 
-The exact analytic pipeline for this study is represented as a graph containing specific data objects and transformation and their relationships [here](https://github.com/target-roc19/case-study-01-covid19/blob/main/docs/cs1_pipeline_target.png)
+The exact analytic pipeline for this study is represented as a graph containing specific data objects and transformation and their relationships [here](https://github.com/target-roc19/case-study-01-covid19-public/blob/main/docs/cs1_pipeline_target.png)
 
 Each data object in the pipeline is documented in a corresponding **codebook** which describes how the data object is obtained from its inputs. Thereby, the codebooks specify the implementation of the given study design, which is executed by the scripts in the repository.
 
