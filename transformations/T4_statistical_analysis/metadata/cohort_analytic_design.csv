@@ -1,0 +1,15 @@
+cohort;condition;ir_table_id;rr_table_id;description;analysis_type;source_pop;estimand;source_weight;weight_col;meta_table_id;meta_plot_id;km_figure_id;sensitivity_scenario;run_scenario
+main;;6.a;7.a;main analysis - estimand 1;main;fup_main;1;;;9.a;7.a;6.a;;TRUE
+main;compliant_exposed == TRUE;6.b;7.b;main analysis - estimand 2;main;fup_main;2;ipsmw_main;ipsmw_raw_trunc;9.b;7.b;6.b;;TRUE
+supplementary;;6.c;7.c;supplement analysis - estimand 1;supplement;fup_supplementary;1;;;9.c;7.c;6.c;;TRUE
+supplementary;compliant_exposed == TRUE;6.d;7.d;supplement analysis - estimand 2;supplement;fup_supplementary;2;ipsmw_supplementary;ipsmw_raw_trunc;9.d;7.d;6.d;;TRUE
+main;;6.e;7.e;sensitivity analysis - IPCW estimand 1;sensitivity1;fup_main;1;ipcw_main_e1;ipcw_cum_trim;9.e;7.e;;;TRUE
+main;compliant_exposed == TRUE;6.f;7.f;sensitivity analysis - IPCW estimand 2;sensitivity1;fup_main;2;ipcw_main_e2,ipsmw_main;composite_weight;9.f;7.f;;;FALSE
+main;;11.a;11.a;BW scenario 1 (Exposed best, Control worst) - estimand 1;sensitivity2;fup_main;1;;;9.g;7.g;;1;TRUE
+main;compliant_exposed == TRUE;11.b;11.b;BW scenario 1 (Exposed best, Control worst) - estimand 2;sensitivity2;fup_main;2;ipsmw_main;ipsmw_raw_trunc;9.k;7.k;;1;FALSE
+main;;11.c;11.c;BW scenario 2 (Exposed worst, Control best) - estimand 1;sensitivity2;fup_main;1;;;9.h;7.h;;2;TRUE
+main;compliant_exposed == TRUE;11.d;11.d;BW scenario 2 (Exposed worst, Control best) - estimand 2;sensitivity2;fup_main;2;ipsmw_main;ipsmw_raw_trunc;9.l;7.l;;2;FALSE
+main;;11.e;11.e;BW scenario 3 (Best for both groups) - estimand 1;sensitivity2;fup_main;1;;;9.i;7.i;;3;TRUE
+main;compliant_exposed == TRUE;11.f;11.f;BW scenario 3 (Best for both groups) - estimand 2;sensitivity2;fup_main;2;ipsmw_main;ipsmw_raw_trunc;9.m;7.m;;3;FALSE
+main;;11.g;11.g;BW scenario 4 (Worst for both groups) - estimand 1;sensitivity2;fup_main;1;;;9.j;7.j;;4;TRUE
+main;compliant_exposed == TRUE;11.h;11.h;BW scenario 4 (Worst for both groups) - estimand 2;sensitivity2;fup_main;2;ipsmw_main;ipsmw_raw_trunc;9.n;7.n;;4;FALSE

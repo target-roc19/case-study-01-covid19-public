@@ -1,0 +1,4 @@
+tab_group,n_pat_exp,n_out_exp,py_exp,ir_est_exp,ir_lb_exp,ir_ub_exp,n_pat_con,n_out_con,py_con,ir_est_con,ir_lb_con,ir_ub_con,rr_est_crude,rr_lb_crude,rr_ub_crude,rr_est_adj,rr_lb_adj,rr_ub_adj,rd_est_crude,rd_lb_crude,rd_ub_crude,rd_est_adj,rd_lb_adj,rd_ub_adj,ve_est_crude,ve_lb_crude,ve_ub_crude,ve_est_adj,ve_lb_adj,ve_ub_adj
+6,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+7,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+11,1,1,1,0,0,0,1,1,1,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1

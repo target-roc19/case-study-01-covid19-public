@@ -1,0 +1,14 @@
+var;vartype;reference_category;label;domain;force_in;force_out
+SV_SEX;CAT;F;Sex;BASELINE;TRUE;FALSE
+SV_REGION;CAT;6;Region;BASELINE;TRUE;FALSE
+SV_SES;CAT;3;Socio-economic status;BASELINE;TRUE;FALSE
+SV_PREG_STATUS;TF;FALSE;Pregnancy status;BASELINE;TRUE;FALSE
+SV_CDC_RISK;CAT;0;CDC high-risk score;BASELINE;TRUE;FALSE
+SV_HU_PC_CONTACT;CAT;0;Healthcare utilization: primary care contact;BASELINE;TRUE;FALSE
+SV_HU_HOSP_CONTACT;CAT;0;Healthcare utilization: hospital contact;BASELINE;TRUE;FALSE
+SV_CCI;CAT;0;Charlson Comorbidity Index;BASELINE;TRUE;FALSE
+SV_HOSP_LENGTH_TV;TF;0;Hospitalization time-varying status (estimand 2);TIMEVARYING;TRUE;FALSE
+SV_IMMUNOCOMPROMISED_TV;TF;0;Incident immunosuppressing condition 1 (estimand 2);TIMEVARYING;TRUE;FALSE
+SV_AGE_CAT;CAT;4;Age category;BASELINE;TRUE;FALSE
+CALENDAR_QUARTER;CAT;2021_2;Calendar quarter;BASELINE;TRUE;FALSE
+SV_VP_OTHER;TF;FALSE;Influenza vaccination;BASELINE;TRUE;FALSE

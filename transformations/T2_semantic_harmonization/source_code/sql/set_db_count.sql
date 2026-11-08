@@ -1,0 +1,1 @@
+SELECT CAST(COUNT(*) AS BIGINT) AS count FROM {fq_table}

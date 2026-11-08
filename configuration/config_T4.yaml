@@ -1,0 +1,33 @@
+# ---------------------------------------------------
+# Clean previous run
+# ---------------------------------------------------
+cleanup:
+  intermediate_data_file: true
+  
+# ---------------------------------------------------  
+# T4 directories
+# ---------------------------------------------------
+T4:
+  name: "statistical_analysis"
+  root: transformations/T4_statistical_analysis
+  intermediate: intermediate_data_file
+  config: configuration
+  source_code: source_code
+  functions: source_code/functions
+
+# ---------------------------------------------------
+# T4 Substeps
+# ---------------------------------------------------
+substep:
+  create_attrition_tables: true
+  plot_matches_by_date: true
+  plot_exclusion_flowchart: false
+  # simulate_d4_data: false
+  compute_ipcw: true
+  describe_ipcw: true
+  compute_ipsmw: true
+  describe_ipsmw: true
+  create_baseline_tables: true
+  create_fup_table: true
+  create_cohort_analytic_outcomes: true
+  create_missingness_table: true

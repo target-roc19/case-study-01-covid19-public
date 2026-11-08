@@ -1,0 +1,15 @@
+var;type;expectedCat;label;parent;parent_cat;header;check_missingness_ps
+SV_AGE;NUM1;NA;Age (years);NA;NA;Demographics;FALSE
+SV_AGE_CAT;CAT;1,2,3,4,5,6,7,8,9;Age group (years);NA;NA;NA;FALSE
+SV_SEX;CAT;F;Female;NA;NA;NA;FALSE
+SV_PREG_STATUS;TF;TRUE;Pregnancy Status;SV_SEX;F;NA;FALSE
+SV_REGION;CAT;;Geographic region;NA;NA;NA;FALSE
+SV_SES;CAT;;Socioeconomic status;NA;NA;NA;FALSE
+CALENDAR_QUARTER;CAT;get study_quarters_all;Date of vaccination;NA;NA;NA;FALSE
+SV_SMOKING;CAT;0,1,2,3;Smoking Status;NA;NA;Personal lifestyle characteristics;TRUE
+SV_BMI;CAT;0,1,2,3,4;BMI;NA;NA;NA;TRUE
+SV_HU_HOSP_CONTACT;CAT;0,1,2;Number of hospitalisations;NA;NA;Healthcare utilisation;FALSE
+SV_HU_PC_CONTACT;CAT;0,1,2;Primary care visits;NA;NA;NA;FALSE
+SV_COVID_ANYTEST;CAT;0,1,2,3;SARS-CoV-2 tests;NA;NA;NA;FALSE
+SV_CDC_RISK;CAT;0,1,2;CDC Score;NA;NA;Summary Measures;FALSE
+SV_CCI;CAT;0,1,2;Charlson Comorbidity Index (CCI);NA;NA;NA;FALSE

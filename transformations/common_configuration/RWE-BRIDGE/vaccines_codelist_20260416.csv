@@ -1,0 +1,61 @@
+drug_abbreviation,coding_system,code,product_name,tags,label,drug_concept
+DP_INFLUENZA,ATC,J07BB,Influenza vaccines,narrow,DP_Proxy,influenza_vaccine
+DP_INFLUENZA,ATC,J07BB01,"influenza, inactivated, whole virus",narrow,DP_Proxy,influenza_vaccine
+DP_INFLUENZA,ATC,J07BB02,"influenza, inactivated, split virus or surface antigen",narrow,DP_Proxy,influenza_vaccine
+DP_INFLUENZA,ATC,J07BB03,"influenza, live attenuated",narrow,DP_Proxy,influenza_vaccine
+DP_INFLUENZA,ATC,J07BB04,"influenza, virus like particles",narrow,DP_Proxy,influenza_vaccine
+DP_INFLUENZA,ATC,J07BB05,"influenza, RNA-based vaccine",narrow,DP_Proxy,influenza_vaccine
+DP_INFLUENZA,PRODCODEID,147441000033115,Begrivac vaccine suspension for injection 0.5ml pre-filled syringes,narrow,DP_Proxy,influenza_vaccine
+DP_INFLUENZA,PRODCODEID,588341000033111,Fluvirin vaccine suspension for injection 0.5ml pre-filled syringes,narrow,DP_Proxy,influenza_vaccine
+DP_INFLUENZA,PRODCODEID,596641000033118,Fluarix vaccine suspension for injection 0.5ml pre-filled syringes,narrow,DP_Proxy,influenza_vaccine
+DP_INFLUENZA,PRODCODEID,759741000033113,Influvac Sub-unit vaccine suspension for injection 0.5ml pre-filled syringes,narrow,DP_Proxy,influenza_vaccine
+DP_INFLUENZA,PRODCODEID,762141000033114,"Influenza vaccine (surface antigen, inactivated) suspension for injection 0.5ml pre-filled syringes",narrow,DP_Proxy,influenza_vaccine
+DP_INFLUENZA,PRODCODEID,770341000033117,"Influenza vaccine (split virion, inactivated) suspension for injection 0.5ml pre-filled syringes",narrow,DP_Proxy,influenza_vaccine
+DP_INFLUENZA,PRODCODEID,1043841000033118,Pasteur Merieux Inactivated Influenza  Vaccine  0.5 ml,narrow,DP_Proxy,influenza_vaccine
+DP_INFLUENZA,PRODCODEID,2078941000033118,Infanrix-Hib vaccine injection pack,narrow,DP_Proxy,influenza_vaccine
+DP_INFLUENZA,PRODCODEID,2189441000033118,"Influenza vaccine (split virion, inactivated) suspension for injection 0.5ml pre-filled syringes",narrow,DP_Proxy,influenza_vaccine
+DP_INFLUENZA,PRODCODEID,2641741000033118,Agrippal vaccine suspension for injection 0.5ml pre-filled syringes,narrow,DP_Proxy,influenza_vaccine
+DP_INFLUENZA,PRODCODEID,2652341000033114,*Influenza & Common Cold  Tablets,narrow,DP_Proxy,influenza_vaccine
+DP_INFLUENZA,PRODCODEID,2652541000033119,*Influenza & Common Cold  Liquid,narrow,DP_Proxy,influenza_vaccine
+DP_INFLUENZA,PRODCODEID,2739241000033119,Hiberix vaccine powder and solvent for solution for injection 0.5ml vials,narrow,DP_Proxy,influenza_vaccine
+DP_INFLUENZA,PRODCODEID,2890941000033111,Mastaflu vaccine suspension for injection 0.5ml pre-filled syringes,narrow,DP_Proxy,influenza_vaccine
+DP_INFLUENZA,PRODCODEID,3179041000033110,Pediacel vaccine suspension for injection 0.5ml vials,narrow,DP_Proxy,influenza_vaccine
+DP_INFLUENZA,PRODCODEID,3188641000033119,Invivac vaccine suspension for injection 0.5ml pre-filled syringes,narrow,DP_Proxy,influenza_vaccine
+DP_INFLUENZA,PRODCODEID,3331741000033119,Enzira vaccine suspension for injection 0.5ml pre-filled syringes,narrow,DP_Proxy,influenza_vaccine
+DP_INFLUENZA,PRODCODEID,3347241000033118,"Influenza vaccine (split virion, inactivated) suspension for injection 0.25ml pre-filled syringes",narrow,DP_Proxy,influenza_vaccine
+DP_INFLUENZA,PRODCODEID,3855441000033113,Infanrix-IPV + Hib vaccine powder and suspension for suspension for injection 0.5ml pre-filled syringes,narrow,DP_Proxy,influenza_vaccine
+DP_INFLUENZA,PRODCODEID,3939141000033113,Menitorix vaccine powder and solvent for solution for injection 0.5ml vials,narrow,DP_Proxy,influenza_vaccine
+DP_INFLUENZA,PRODCODEID,3952441000033113,Imuvac vaccine suspension for injection 0.5ml pre-filled syringes,narrow,DP_Proxy,influenza_vaccine
+DP_INFLUENZA,PRODCODEID,3954241000033115,Viroflu vaccine suspension for injection 0.5ml pre-filled syringes,narrow,DP_Proxy,influenza_vaccine
+DP_INFLUENZA,PRODCODEID,3954341000033113,"Influenza vaccine (surface antigen, inactivated, virosome) suspension for injection 0.5ml pre-filled syringes",narrow,DP_Proxy,influenza_vaccine
+DP_INFLUENZA,PRODCODEID,5093141000033117,"Influenza vaccine (split virion, inactivated) 15microgram strain suspension for injection 0.1ml pre-filled syringes",narrow,DP_Proxy,influenza_vaccine
+DP_INFLUENZA,PRODCODEID,5093241000033112,Intanza 15microgram strain vaccine suspension for injection 0.1ml pre-filled syringes,narrow,DP_Proxy,influenza_vaccine
+DP_INFLUENZA,PRODCODEID,5208541000033111,Pandemrix vaccine emulsion and suspension for emulsion for injection,narrow,DP_Proxy,influenza_vaccine
+DP_INFLUENZA,PRODCODEID,5415741000033111,Intanza 9microgram strain vaccine suspension for injection 0.1ml pre-filled syringes,narrow,DP_Proxy,influenza_vaccine
+DP_INFLUENZA,PRODCODEID,5415841000033118,"Influenza vaccine (split virion, inactivated) 9microgram strain suspension for injection 0.1ml pre-filled syringes",narrow,DP_Proxy,influenza_vaccine
+DP_INFLUENZA,PRODCODEID,5473441000033110,Diphtheria / Tetanus / Pertussis (acellular component) / Poliomyelitis (inactivated) / Haemophilus type b conjugate vaccine (adsorbed) powder and suspension for suspension for injection 0.5ml pre-filled syringes,narrow,DP_Proxy,influenza_vaccine
+DP_INFLUENZA,PRODCODEID,5896241000033119,Haemophilus type b / Meningococcal C conjugate vaccine powder and solvent for solution for injection 0.5ml vials,narrow,DP_Proxy,influenza_vaccine
+DP_INFLUENZA,PRODCODEID,6452541000033117,Inflexal V vaccine suspension for injection 0.5ml pre-filled syringes,narrow,DP_Proxy,influenza_vaccine
+DP_INFLUENZA,PRODCODEID,6453341000033116,Preflucel vaccine suspension for injection 0.5ml pre-filled syringes,narrow,DP_Proxy,influenza_vaccine
+DP_INFLUENZA,PRODCODEID,6494541000033116,Influenza vaccine (live attenuated) nasal suspension 0.2ml unit dose,narrow,DP_Proxy,influenza_vaccine
+DP_INFLUENZA,PRODCODEID,6494641000033115,Fluenz vaccine nasal suspension 0.2ml unit dose,narrow,DP_Proxy,influenza_vaccine
+DP_INFLUENZA,PRODCODEID,8123441000033119,Optaflu vaccine suspension for injection 0.5ml pre-filled syringes,narrow,DP_Proxy,influenza_vaccine
+DP_INFLUENZA,PRODCODEID,8534741000033118,Influvac Desu vaccine suspension for injection 0.5ml pre-filled syringes,narrow,DP_Proxy,influenza_vaccine
+DP_INFLUENZA,PRODCODEID,8563041000033113,Fluarix Tetra vaccine suspension for injection 0.5ml pre-filled syringes,narrow,DP_Proxy,influenza_vaccine
+DP_INFLUENZA,PRODCODEID,9306941000033116,Fluenz Tetra vaccine nasal suspension 0.2ml unit dose,narrow,DP_Proxy,influenza_vaccine
+DP_INFLUENZA,PRODCODEID,9702041000033119,"Influenza vaccine (split virion, inactivated) suspension for injection 0.5ml pre-filled syringes",narrow,DP_Proxy,influenza_vaccine
+DP_INFLUENZA,PRODCODEID,10647441000033112,FluMist Quadrivalent vaccine nasal suspension 0.2ml unit dose,narrow,DP_Proxy,influenza_vaccine
+DP_INFLUENZA,PRODCODEID,12355941000033114,Infanrix Hexa vaccine powder and suspension for suspension for injection 0.5ml pre-filled syringes,narrow,DP_Proxy,influenza_vaccine
+DP_INFLUENZA,PRODCODEID,12364041000033116,"Quadrivalent influenza vaccine (split virion, inactivated) suspension for injection 0.5ml pre-filled syringes",narrow,DP_Proxy,influenza_vaccine
+DP_INFLUENZA,PRODCODEID,12593041000033119,Fluad vaccine suspension for injection 0.5ml pre-filled syringes,narrow,DP_Proxy,influenza_vaccine
+DP_INFLUENZA,PRODCODEID,12598941000033114,Influvac sub-unit Tetra vaccine suspension for injection 0.5ml pre-filled syringes,narrow,DP_Proxy,influenza_vaccine
+DP_INFLUENZA,PRODCODEID,12599041000033117,Influenza Tetra MYL vaccine suspension for injection 0.5ml pre-filled syringes,narrow,DP_Proxy,influenza_vaccine
+DP_INFLUENZA,PRODCODEID,12605941000033110,Influenza MYL vaccine suspension for injection 0.5ml pre-filled syringes,narrow,DP_Proxy,influenza_vaccine
+DP_INFLUENZA,PRODCODEID,12884141000033117,Flucelvax Tetra vaccine suspension for injection 0.5ml pre-filled syringes,narrow,DP_Proxy,influenza_vaccine
+DP_INFLUENZA,PRODCODEID,13011941000033111,"Trivalent influenza vaccine (split virion, inactivated) High Dose suspension for injection 0.5ml pre-filled syringes",narrow,DP_Proxy,influenza_vaccine
+DP_INFLUENZA,PRODCODEID,13133041000033114,"Adjuvanted trivalent influenza vaccine (surface antigen, inactivated) suspension for injection 0.5ml pre-filled syringes",narrow,DP_Proxy,influenza_vaccine
+DP_INFLUENZA,PRODCODEID,13718641000033111,Fluad Tetra vaccine suspension for injection 0.5ml pre-filled syringes,narrow,DP_Proxy,influenza_vaccine
+DP_INFLUENZA,PRODCODEID,13810141000033118,Vaxelis vaccine suspension for injection 0.5ml pre-filled syringes,narrow,DP_Proxy,influenza_vaccine
+DP_INFLUENZA,PRODCODEID,13913741000033115,"Cell-based quadrivalent influenza vaccine (surface antigen, inactivated) suspension for injection 0.5ml pre-filled syringes",narrow,DP_Proxy,influenza_vaccine
+DP_INFLUENZA,PRODCODEID,13913841000033113,"Adjuvanted quadrivalent influenza vaccine (surface antigen, inactivated) suspension for injection 0.5ml pre-filled syringes",narrow,DP_Proxy,influenza_vaccine
+DP_INFLUENZA,PRODCODEID,14430441000033112,"Quadrivalent influenza vaccine (split virion, inactivated) High-Dose suspension for injection 0.7ml pre-filled syringes",narrow,DP_Proxy,influenza_vaccine

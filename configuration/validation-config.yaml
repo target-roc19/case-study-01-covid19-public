@@ -1,0 +1,26 @@
+# Reusable metadata validation configuration
+
+# Base folder containing metadata and reference files.
+data_dir: transformations/common_configuration/RWE-BRIDGE
+
+# Metadata files (without extension). Each can be .csv or .rds.
+files:
+  study_variables: study_variables
+  concept_preprocessing: concept_preprocessing
+  composite_study_variables: composite_study_variables
+  study_cohort: study_cohort
+
+# Reference files (without extension). Add/remove entries per project.
+reference_files:
+  dap_specific_concept_map: dap_specific_concept_map
+  codelist_events: events_codelist_20260507
+  codelist_procedures: codelist_procedures
+  codelist_medicines: medicines_codelist_20260729
+  codelist_vaccines: vaccines_codelist_20260416
+
+# Optional transformation strategy per reference file.
+# Supported values: events, procedures, medicines
+reference_transforms:
+  codelist_events: events
+  codelist_procedures: procedures
+  codelist_medicines: medicines

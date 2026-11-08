@@ -1,0 +1,8 @@
+coding_system,dap_name,start_exact_match
+MEDCODEID,CPRD,exact
+PRODCODEID,CPRD,exact
+ICD10,VID,start
+ICD9CM,VID,start
+ICD9PCS,VID,exact
+ICD10CM,VID,start
+ICD10PCS,VID,exact

@@ -1,0 +1,318 @@
+DEAP_configuration:
+  data_instance: data/D2_cdm/VID_260529
+  # data_instance: # ENTER PATH TO DATA INSTANCE HERE
+  name: VID # VID OR CPRD
+  database_path: ~
+  data_model: ConcePTION
+
+set_db:
+  cdm_metadata: transformations/common_configuration/CDM_metadata.rds
+  database_loader_config: configuration/config_set_db.json
+  output: data/D2_cdm/d2.duckdb
+
+process_codelist:
+  events_codelist_latest: transformations/common_configuration/RWE-BRIDGE/events_codelist_20260507.csv
+  medicines_codelist_latest: transformations/common_configuration/RWE-BRIDGE/medicines_codelist_20260729.csv
+  vaccines_codelist_latest: transformations/common_configuration/RWE-BRIDGE/vaccines_codelist_20260416.csv
+  dap_specific_concept_map: transformations/common_configuration/RWE-BRIDGE/dap_specific_concept_map.csv
+  output_codelist_events: transformations/T2_semantic_harmonization/intermediate_data_file/dap_specific_codelist_events.rds
+  output_codelist_medicines: transformations/T2_semantic_harmonization/intermediate_data_file/dap_specific_codelist_medicines.rds
+  output_codelist_procedures: transformations/T2_semantic_harmonization/intermediate_data_file/dap_specific_codelist_procedures.rds
+  output_map_missing_infomation: transformations/T2_semantic_harmonization/intermediate_data_file/dap_specific_concept_map_missing_infomation.rds
+  output_concept_map: transformations/T2_semantic_harmonization/intermediate_data_file/dap_specific_concept_map.rds
+  output_codelist_vaccines: transformations/T2_semantic_harmonization/intermediate_data_file/dap_specific_codelist_vaccines.rds
+
+create_simple_concepts:
+  since_when_data_complete: transformations/T2_semantic_harmonization/intermediate_data_file/since_when_data_complete.rds
+  d3_spells: data/D3_study_variables/D3_SPELLS.parquet
+  medicines_field_by_deap:
+    CPRD:
+      code_col: medicinal_product_id
+      coding_system: PRODCODEID
+    default:
+      code_col: medicinal_product_atc_code
+      coding_system: ATC
+  required_cols_d3_concept: 
+        - ori_table
+        - unique_id
+        - person_id
+        - code
+        - coding_system
+        - value
+        - date
+        - concept_id
+
+create_complex_concepts:
+  input_dir: data/D3_study_variables/D3_CONCEPTS_parquet
+  output_dir: data/D3_study_variables/D3_CONCEPTS_parquet
+  concept_meaning: transformations/common_configuration/RWE-BRIDGE/concept_meaning.csv
+  functions: transformations/T2_semantic_harmonization/source_code/functions
+  d3_spells: data/D3_study_variables/D3_SPELLS.parquet
+  required_cols_d3_concept: 
+          - ori_table
+          - unique_id
+          - person_id
+          - code
+          - coding_system
+          - value
+          - date
+          - concept_id
+  start_complex_concept_name: ~
+
+processing_persons:
+  persons: data/D2_cdm/d2.duckdb
+  cdm_source: data/D2_cdm/d2.duckdb
+  source_file: ~
+  output_persons: transformations/T2_semantic_harmonization/intermediate_data_file
+
+process_observation_periods:
+  D3_person_file: data/D3_study_variables/D3_PERSONS.parquet
+  source_file: ~
+  observation_periods_file: data/D2_cdm/d2.duckdb
+
+create_univariate_episodes:
+  d3_concepts: data/D3_study_variables/D3_CONCEPTS_parquet
+  d3_spells: data/D3_study_variables/D3_SPELLS.parquet
+  output_hive_path: data/D3_study_variables/D3_UNIVARIATE_EPISODES_parquet
+  batch_size: 30000
+
+create_multivariate_episodes:
+  d3_spells_file_name: data/D3_study_variables/D3_SPELLS.parquet
+  d3_univariate_episodes: data/D3_study_variables/D3_UNIVARIATE_EPISODES_parquet
+  output_path: data/D3_study_variables/D3_MULTIVARIATE_EPISODES.parquet
+  batch_size: 30000
+
+calculate_eligibility:
+  d3_spells: data/D3_study_variables/D3_SPELLS.parquet
+  d3_rsvproducts: data/D3_study_variables/d3_rsvproducts.parquet
+  d3_all_concepts: data/D3_study_variables/D3_ALL_CONCEPTS.duckdb
+  source_info: ~
+
+studyvariables_anchored:
+  d3_all_concepts: data/D3_study_variables/D3_ALL_CONCEPTS.duckdb
+  d3_eligibility: data/D3_study_variables/D3_Eligibility.parquet
+  output_anchoring: data/D4_analytic_datasets/D4_STUDYVARIABLES_ANCHORED.parquet
+
+
+# ---------------------------------------------------
+# create_eligibility run configuration
+# ---------------------------------------------------
+create_eligible_pop:
+  input: 
+    dir: data/D3_study_variables
+    file_name: D3_MULTIVARIATE_EPISODES.parquet
+  output:
+    dir: data/D3_study_variables
+    file_name: D3_Eligibility.parquet
+  test_mode: true
+
+
+# ---------------------------------------------------
+# create_cohort run configuration
+# ---------------------------------------------------
+create_cohort:
+  input:
+    dir_d3: data/D3_study_variables
+    input_file_name: D3_Eligibility.parquet
+  output:
+    dir_d4: data/D4_analytic_datasets
+    save_output: true
+    output_file_name: D4_StudyCohort
+  intermediate_output:
+    save_intermediate_outputs: true
+    dir_intermediate_outputs: transformations/T3_study_design/intermediate_data_file
+    profile_table_name: I3_ProfileTable
+    matching_pop_name: I3_MatchingPopulation
+  matching:
+    vars:
+      - SV_SEX
+      - SV_REGION
+      - SV_SES
+      - SV_PREG_STATUS
+      - SV_CDC_RISK
+      - SV_HU_PC_CONTACT
+      - SV_HU_HOSP_CONTACT
+    modes:
+      - without_replacement
+      - with_replacement
+    dir_matching_db: transformations/T3_study_design/intermediate_data_file/matching/matching_db.duckdb
+    n_cores: null
+    start_seed: 42
+    age_offset: 0
+    exposed_batch_size: 200000
+    control_batch_size: 200000
+  bootstrap:
+    with_bootstrap: false
+    n_bootstraps: 1
+    dir_bootstrap: null
+  simulation:
+    simulate_d3_eligibility_now: false
+    n_simulated_spells: 5000000
+    save_simulated_d3_eligibility: true
+    output_dir: data/D3_study_variables
+    output_file_name: D3_Eligibility
+
+# ---------------------------------------------------
+# create_anchored_datasets run configuration
+# ---------------------------------------------------
+create_anchored_datasets:
+  input:
+    cohort_dir: data/D4_analytic_datasets
+    cohort_file: D4_StudyCohort
+    metadata_dir: transformations/T3_study_design/metadata
+    metadata_file: anchoring_window_metadata.csv
+    concepts_dir: data/D3_study_variables/D3_CONCEPTS_parquet
+  output:
+    dir: data/D4_analytic_datasets
+    baseline_cov_file: D4_StudyCohortCovariates
+    tv_cov_file: D4_StudyCohortTimeVaryingCovariates
+    fup_file: D4_StudyCohortFup
+    anchoring_dir: data/D3_study_variables/D3_ANCHORED_VARIABLES_parquet
+
+# ---------------------------------------------------
+# simulate_d4_data run configuration
+# ---------------------------------------------------
+simulate_d4_data:
+  analyses:
+    - Main
+    - Supplementary
+  objects:
+    - cohort
+    - fup
+    - tv
+    - covariates
+  analyses_defaults:
+    Main:
+      seed: 42
+      n_pairs: 5000
+    Supplementary:
+      seed: 42
+      n_pairs: 4000
+  seed_override: null
+  n_pairs_override: null
+  max_fup_days: 90
+  start_date: 2021-01-01
+  cohort_file: null
+  # cohort_file: D4_StudyCohort{analysis}.parquet
+  fup_file: null
+  metadata:
+    baseline_descriptives_file: transformations/T3_study_design/metadata/BaselineDescriptives_Metadata.csv
+    baseline_comorbidities_file: transformations/T3_study_design/metadata/BaselineComorbidities_Metadata.csv
+    baseline_comedications_file: transformations/T3_study_design/metadata/BaselineComedications_Metadata.csv
+  output:
+    # out_dir: tests/testthat/test_data
+    out_dir: data/D4_analytic_datasets
+
+# ---------------------------------------------------
+# compute_ipcw run configuration
+# ---------------------------------------------------
+compute_ipcw:
+  analyses:
+    - Main
+    # - Supplementary
+  estimands:
+    - 1
+    # - 2
+  input:
+    dir_d4: data/D4_analytic_datasets
+    cohort_file: D4_StudyCohort{analysis}.parquet
+    fup_file: D4_StudyCohortFup{analysis}.parquet
+    tv_file: D4_StudyCohortTimeVaryingCovariates{analysis}.parquet
+    cov_file: D4_StudyCohortCovariates{analysis}.parquet
+  metadata:
+    ipcw_variables_file: transformations/T4_statistical_analysis/metadata/ipcw_variables.csv
+  truncation:
+    q_lower: 0.01
+    q_upper: 0.99
+  prediction_eps: 0.000001
+  fit_groups: "both" # or "exposed" or "both"
+  plot_censor_by_time: false
+  plots_by_censoring: false
+  output:
+    dir_d4: data/D4_analytic_datasets
+    dir_d5: data/D5_results
+
+# ---------------------------------------------------
+# compute_ipsmw run configuration
+# ---------------------------------------------------
+compute_ipsmw:
+  analyses:
+    - Main
+    - Supplementary
+  estimands:
+    - 2
+  input:
+    dir_d4: data/D4_analytic_datasets
+    cohort_file: D4_StudyCohort{analysis}.parquet
+    fup_file: D4_StudyCohortFup{analysis}.parquet
+    cov_file: D4_StudyCohortCovariates{analysis}.parquet
+  metadata:
+    ipsmw_variables_file: transformations/T4_statistical_analysis/metadata/ipsmw_variables.csv
+  truncation:
+    q_lower: 0.05
+    q_upper: 0.95
+  ipsmw_weight: "ipsmw_raw_trunc"
+  save_diagnostics: false
+  weighted_exposed_figures: false
+  output:
+    dir_d4: data/D4_analytic_datasets
+    dir_d5: data/D5_results
+
+# ---------------------------------------------------
+# create_baseline_tables run configuration
+# ---------------------------------------------------
+create_baseline_tables:
+  input:
+    dir_d4: data/D4_analytic_datasets
+    dir_metadata: transformations/T3_study_design/metadata
+    label_lookup_file: transformations/T4_statistical_analysis/metadata/label_lookup.csv
+    # expected_missing_file: transformations/common_configuration/RWE-BRIDGE/expected_missing.csv
+    # label_lookup_file:
+    expected_missing_file:
+  ipsmw_weight: "ipsmw_raw_trunc"
+  output:
+    dir_d5: data/D5_results
+    save_output: true
+    save_asds_pre: true
+
+# ---------------------------------------------------
+# create_cohort_analytic_outcomes run configuration
+# ---------------------------------------------------
+create_cohort_analytic_outcomes:
+  input:
+    dir_d4:                   data/D4_analytic_datasets
+    fup_files:
+      fup_main:               D4_StudyCohortFupMain.parquet
+      fup_supplementary:      D4_StudyCohortFupSupplementary.parquet
+    weight_files:
+      ipcw_main_e1:           D4_StudyCohort_IPCW_Main_Estimand1.parquet
+      ipcw_main_e2:           D4_StudyCohort_IPCW_Main_Estimand2.parquet
+      ipcw_supplementary_e1:  D4_StudyCohort_IPCW_Supplementary_Estimand1.parquet
+      ipcw_supplementary_e2:  D4_StudyCohort_IPCW_Supplementary_Estimand2.parquet
+      ipsmw_main:             D4_StudyCohort_IPSMW_Main.parquet
+      ipsmw_supplementary:    D4_StudyCohort_IPSMW_Supplementary.parquet
+    dir_metadata:             transformations/T4_statistical_analysis/metadata
+    cohort_analytic_design:   cohort_analytic_design.csv
+    cohort_analytic_tables:   cohort_analytic_tables.csv
+    dir_functions:            transformations/T4_statistical_analysis/source_code/functions
+  aesi_name:  composite_outcome
+  aesi_label: "Composite outcome: COVID-19 diagnosis or death"
+  time_col: time_days
+  scale_IR:   10000
+  ipsmw_weight: "ipsmw_raw_trunc"
+  masking:
+    apply_masking: true
+    mask_threshold: 5
+  output:
+    dir_d5:           data/D5_results
+    output_file_name: D5_CohortAnalyticLookup.csv
+    table_export_mode: combined # export individual or combined tables
+
+# ---------------------------------------------------
+# output directories for general use
+# ---------------------------------------------------
+outputs:
+  dir_d3: data/D3_study_variables
+  dir_d4: data/D4_analytic_datasets
+  dir_d5: data/D5_results
+  dir_d6: data/D6_report

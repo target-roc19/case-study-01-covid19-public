@@ -1,0 +1,19 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Run RWE-BRIDGE Validator Test",
+      "type": "shell",
+      "command": "Rscript",
+      "args": [
+        "run/run_rwe_bridge_validator.R"
+      ],
+      "isBackground": false,
+      "problemMatcher": [],
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      }
+    }
+  ]
+}

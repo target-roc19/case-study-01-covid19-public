@@ -1,0 +1,29 @@
+var;type;expectedCat;label;parent;parent_cat;header;check_missingness_ps
+SV_HYPERTENSION;TF;NA;Hypertension;NA;NA;Cardiovascular;FALSE
+PRIOR_MYOCARDIAL_INFARCT;TF;NA;Myocardial infarct;NA;NA;NA;FALSE
+PRIOR_CHF;TF;NA;Congestive heart failure;NA;NA;NA;FALSE
+PRIOR_PVD;TF;NA;Peripheral vascular disease;NA;NA;NA;FALSE
+PRIOR_CEREBROVASCULAR_DISEASE;TF;NA;Cerebrovascular disease;NA;NA;NA;FALSE
+SV_CVD;TF;NA;Cardiovascular disease;NA;NA;NA;FALSE
+SV_DIABETES12;TF;NA;Diabetes mellitus (type 1 and 2);NA;NA;Endocrine/Metabolic;FALSE
+PRIOR_DM_NOCOMPLICATIONS;TF;NA;Diabetes without complications;NA;NA;NA;FALSE
+PRIOR_DM_WITHCOMPLICATIONS;TF;NA;Diabetes with complications;NA;NA;NA;FALSE
+SV_CRD;TF;NA;Chronic respiratory disease;NA;NA;Respiratory;FALSE
+PRIOR_INFLUENZA_RESPINF;TF;NA;Influenza or other respiratory infections;NA;NA;NA;FALSE
+PRIOR_MILD_LD;TF;NA;Mild liver disease;NA;NA;Gastrointestinal;FALSE
+PRIOR_MOD_SEV_LD;TF;NA;Moderate or severe liver disease;NA;NA;NA;FALSE
+PRIOR_PEPTICULCER;TF;NA;Peptic ulcer disease;NA;NA;NA;FALSE
+PRIOR_CLD;TF;NA;Chronic liver disease;NA;NA;NA;FALSE
+SV_CKD;TF;NA;Chronic kidney disease;NA;NA;Renal;FALSE
+PRIOR_MILD_MOD_KD;TF;NA;Mild to moderate kidney disease;NA;NA;NA;FALSE
+PRIOR_SEV_KD;TF;NA;Severe kidney disease;NA;NA;NA;FALSE
+PRIOR_DEMENTIA;TF;NA;Dementia;NA;NA;Neurological;FALSE
+PRIOR_HEMIPLEGIA;TF;NA;Hemiplegia;NA;NA;NA;FALSE
+PRIOR_RHEUMATICDISEASE;TF;NA;Rheumatic arthritis;NA;NA;Rheumatoid disease;FALSE
+PRIOR_ANY_MALIGNANCY_NONMETASTATIC;TF;NA;Any malignancy;NA;NA;Oncology;FALSE
+PRIOR_METASTASIS;TF;NA;Metastatic solid tumor;NA;NA;NA;FALSE
+SV_CANCER;TF;NA;Cancer;NA;NA;NA;FALSE
+PRIOR_ANAPHYLAXIS;TF;NA;History of anaphylaxis;NA;NA;Other;FALSE
+PRIOR_ALLERGIES;TF;NA;History of allergies;NA;NA;NA;FALSE
+SV_SICKLECELL;TF;NA;Sickle cell disease;NA;NA;NA;FALSE
+PRIOR_AUTOIMMUNE_DISORDERS;TF;NA;Autoimmune disorders;NA;NA;NA;FALSE

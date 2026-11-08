@@ -1,0 +1,12 @@
+start_study_date: 2020-12-01 #start of followup of the population
+end_study_date: 2022-04-30 #end of followup of the population
+recommended_end_date: YYYY-MM-DD
+end_data_collection: YYYY-MM-DD # depends on the DEAP
+start_eligibility_date: YYYY-MM-DD
+end_study_date_this_report: YYYY-MM-DD
+year_length: 365.25
+month_length: 30.44
+obs_period_overlap:
+analysis_for_children: false
+start_lookback: 2018-12-01 #start of the lookback period for the study
+end_exposure_assessment_window: 2022-01-21 #defines the end of the exposure assessment window for the study

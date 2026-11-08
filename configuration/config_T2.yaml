@@ -1,0 +1,47 @@
+# ---------------------------------------------------
+# T2 directories
+# ---------------------------------------------------
+T2:
+  name: "semantic_harmonization"
+  root: transformations/T2_semantic_harmonization
+  intermediate: intermediate_data_file
+  config: configuration
+  source_code: source_code
+  sql_queries: source_code/sql
+  functions: source_code/functions
+
+# ---------------------------------------------------
+# T2 Semantic Harmonization Configuration
+# ---------------------------------------------------
+names_keep: NULL
+package_T2DMM: 
+count_rows_flag: TRUE
+cdm_table_names: ["PERSONS", "VACCINES", "OBSERVATION_PERIODS", "MEDICAL_OBSERVATIONS", "MEDICINES",
+                  "EVENTS", "SURVEY_OBSERVATIONS", "SURVEY_ID", "VISIT_OCCURRENCE", "PROCEDURES"]
+codelist_events:
+  transformations/T2_semantic_harmonization/intermediate_data_file/dap_specific_codelist_events.rds
+codelist_medicines:
+  transformations/T2_semantic_harmonization/intermediate_data_file/dap_specific_codelist_medicines.rds
+codelist_procedures:
+  transformations/T2_semantic_harmonization/intermediate_data_file/dap_specific_codelist_procedures.rds
+codelist_vaccines:
+  transformations/T2_semantic_harmonization/intermediate_data_file/dap_specific_codelist_vaccines.rds
+sql_dir:
+  transformations/T2_semantic_harmonization/source_code/sql/
+
+# ---------------------------------------------------
+# Clean previous run
+# ---------------------------------------------------
+cleanup:
+  intermediate_data_file: true
+
+# ---------------------------------------------------
+# T2 Substeps
+# ---------------------------------------------------
+substep:
+  set_db: true
+  process_persons: true
+  process_observation_periods: true
+  process_codelist: true
+  create_simple_concepts: true
+  create_complex_concepts: true

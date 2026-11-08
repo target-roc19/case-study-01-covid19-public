@@ -1,0 +1,29 @@
+# ---------------------------------------------------
+# Common elements
+# ---------------------------------------------------
+common:
+  dir_commonfunctionality: transformations/common_functionality
+  dir_function: transformations/common_functionality/functions
+  dir_bridge: transformations/common_configuration/RWE-BRIDGE
+  dir_metadata: transformations/common_configuration/metadata
+  bmi_age_filter: transformations/common_configuration/RWE-BRIDGE/bmi_age_filter.csv
+  concept_ranges: transformations/common_configuration/RWE-BRIDGE/concept_ranges.csv
+
+# ---------------------------------------------------
+# Step of the pipeline
+# ---------------------------------------------------
+steps:
+  T2: run/run_T2_pipeline.R
+  T3: run/run_T3_pipeline.R
+  T4: run/run_T4_pipeline.R
+  #T5: run/run_T5_pipeline.R
+
+# ---------------------------------------------------
+# Databases
+# ---------------------------------------------------
+databases:
+  dir_d2_db: data/D2_cdm/d2.duckdb
+  dir_concept: data/D3_study_variables/D3_CONCEPTS.duckdb
+  dir_preprocess_concept: data/D3_study_variables/preprocessing_concepts_table.duckdb
+  dir_all_concepts: data/D3_study_variables/D3_ALL_CONCEPTS.duckdb
+  dir_anchored_variables_db: data/D3_study_variables/anchored_variables.duckdb

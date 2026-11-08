@@ -1,0 +1,21 @@
+# ---------------------------------------------------
+# Clean previous run
+# ---------------------------------------------------
+cleanup:
+  intermediate_data_file: true
+  
+# ---------------------------------------------------  
+# T5 directories
+# ---------------------------------------------------
+T5:
+  name: "pool_postprocessing"
+  root: transformations/T5_pool_postprocessing
+  intermediate: intermediate_data_file
+  config: configuration
+  source_code: source_code
+  functions: source_code/functions
+
+# ---------------------------------------------------
+# T5 Substeps
+# ---------------------------------------------------
+substep:

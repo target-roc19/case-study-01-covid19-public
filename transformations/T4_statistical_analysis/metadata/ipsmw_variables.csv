@@ -1,0 +1,11 @@
+var;vartype;reference_category;label;force_in;force_out
+SV_SEX;CAT;F;Sex;TRUE;FALSE
+SV_REGION;CAT;6;Region;TRUE;FALSE
+SV_SES;CAT;3;Socio-economic status;TRUE;FALSE
+SV_PREG_STATUS;TF;FALSE;Pregnancy status;TRUE;FALSE
+SV_CDC_RISK;CAT;0;CDC high-risk score;TRUE;FALSE
+SV_HU_PC_CONTACT;CAT;0;Healthcare utilization: primary care contact;TRUE;FALSE
+SV_HU_HOSP_CONTACT;CAT;0;Healthcare utilization: hospital contact;TRUE;FALSE
+SV_CCI;CAT;0;Charlson Comorbidity Index;TRUE;FALSE
+SV_AGE_CAT;CAT;4;Age category;TRUE;FALSE
+CALENDAR_QUARTER;CAT;2021_2;Calendar quarter;TRUE;FALSE

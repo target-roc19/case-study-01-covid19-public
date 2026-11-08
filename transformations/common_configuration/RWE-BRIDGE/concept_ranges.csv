@@ -1,0 +1,49 @@
+concept_id,new_value,lower_range,upper_range,description,
+PP_CDC_RISK,0,0,0,CDC at-risk group 0,
+PP_CDC_RISK,1,1,1,CDC at-risk group 1,
+PP_CDC_RISK,2,2,99999,CDC at-risk group 2,
+PP_BMI_INT,1,0,18.5,UNDERWEIGHT,TRUE
+PP_BMI_INT,2,18.5,25,NORMALWEIGHT,TRUE
+PP_BMI_INT,3,25,30,OVERWEIGHT,TRUE
+PP_BMI_INT,4,30,80,OBESE,TRUE
+PP_CHARLSON_INDEX_INT,0,0,1,0 or 1 - Charlson Comorbidity Index score,TRUE
+PP_CHARLSON_INDEX_INT,1,2,2,2 - Charlson Comorbidity Index score,TRUE
+PP_CHARLSON_INDEX_INT,2,3,99999,≥3 - Charlson Comorbidity Index score,TRUE
+HU_PC_NUM,1,0,0,Total of 0 primary care visits,TRUE
+HU_PC_NUM,2,1,2,Total of 1 to 2 primary care visits,TRUE
+HU_PC_NUM,3,3,4,Total of 3 to 4 primary care visits,TRUE
+HU_PC_NUM,4,5,99999,Total of ≥ 5 primary care visits,TRUE
+HU_OUTPAT_NUM,1,0,0,Total of 0 outpatient visits,TRUE
+HU_OUTPAT_NUM,2,1,2,Total of 1 to 2 outpatient visits,TRUE
+HU_OUTPAT_NUM,3,3,4,Total of 3 to 4 outpatient visits,TRUE
+HU_OUTPAT_NUM,4,5,99999,Total of ≥ 5 outpatient visits,TRUE
+HU_ED_NUM,1,0,0,Total of 0 Emergency Department visits,TRUE
+HU_ED_NUM,2,1,1,Total of 1 Emergency Department visit,TRUE
+HU_ED_NUM,3,2,2,Total of 2 Emergency Department visits,TRUE
+HU_ED_NUM,4,3,99999,Total of ≥ 3 Emergency Department visits,TRUE
+PP_HOSP,1,0,0,Total of 0 hospitalisations,TRUE
+PP_HOSP,2,1,1,Total of 1 hospitalisation,TRUE
+PP_HOSP,3,2,2,Total of 2 hospitalisations,TRUE
+PP_HOSP,4,3,99999,Total of ≥ 3 hospitalisations,TRUE
+HU_ICU_NUM,1,0,0,Total of 0 ICU visits,TRUE
+HU_ICU_NUM,2,1,1,Total of 1 ICU visit,TRUE
+HU_ICU_NUM,3,2,2,Total of 2 ICU visits,TRUE
+HU_ICU_NUM,4,3,99999,Total of ≥ 3 ICU visits,TRUE
+PP_NUMMEDICATIONS,1,0,0,Total of 0 prescriptions of medications used per individual,TRUE
+PP_NUMMEDICATIONS,2,1,2,Total of 1 to 2 prescriptions of medications used per individual,TRUE
+PP_NUMMEDICATIONS,3,3,4,Total of 3 to 4 prescriptions of medications used per individual,TRUE
+PP_NUMMEDICATIONS,4,5,99999,Total of >= 5 prescriptions of medications used per individual,TRUE
+PP_FRAILTY_SCORE,1,0,0.15,A frailty score of <0.15,TRUE
+PP_FRAILTY_SCORE,2,0.15,0.24,A frailty score of 0.15-0.24,TRUE
+PP_FRAILTY_SCORE,3,0.25,0.34,A frailty score of 0.25-0.34,TRUE
+PP_FRAILTY_SCORE,4,0.35,99999,A frailty score of ≥0.35,TRUE
+PP_AGE_CAT,0,0,16,0-16,TRUE
+PP_AGE_CAT,1,16,18,16-17,TRUE
+PP_AGE_CAT,2,18,30,18-29,TRUE
+PP_AGE_CAT,3,30,40,30-39,TRUE
+PP_AGE_CAT,4,40,50,40-49,TRUE
+PP_AGE_CAT,5,50,60,50-59,TRUE
+PP_AGE_CAT,6,60,65,60-64,TRUE
+PP_AGE_CAT,7,65,70,65-69,TRUE
+PP_AGE_CAT,8,70,80,70-79,TRUE
+PP_AGE_CAT,9,80,200,80+,TRUE

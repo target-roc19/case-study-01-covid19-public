@@ -1,0 +1,37 @@
+# ---------------------------------------------------
+# T3 Semantic Harmonization Configuration
+# ---------------------------------------------------
+names_keep: null
+count_rows_flag: true # what use?
+
+# ---------------------------------------------------
+# Clean previous run
+# ---------------------------------------------------
+cleanup:
+  intermediate_data_file: true
+  temp_db: true
+# ---------------------------------------------------  
+# T3 directories
+# ---------------------------------------------------
+T3:
+  name: "study_design"
+  root: transformations/T3_study_design
+  intermediate: intermediate_data_file
+  config: configuration
+  source_code: source_code
+  sql_queries: source_code/sql_queries
+  functions: source_code/functions
+  temp_db: intermediate_data_file/temp.duckdb
+
+# ---------------------------------------------------
+# T3 Substeps
+# ---------------------------------------------------
+substep:
+  create_univariate_episodes: true
+  create_multivariate_episodes: true
+  create_eligible_pop: true
+  create_cohort: true
+  create_anchored_hive: true
+  create_fup: true
+  create_baseline_covariates: true
+  create_tv_covariates: true

@@ -1,0 +1,1 @@
+CREATE TABLE {table} AS SELECT * FROM {name_view}

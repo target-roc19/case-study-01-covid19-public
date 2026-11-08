@@ -1,0 +1,11 @@
+var;type;expectedCat;label;parent;parent_cat;header;check_missingness_ps
+CU_ANALGESICS;TF;TRUE;Analgesics;NA;NA;Comedications;FALSE
+CU_ANTIBIOTICS;TF;TRUE;Antibiotics;NA;NA;NA;FALSE
+CU_CV_ACE_ARB;TF;TRUE;Antihypertensives;NA;NA;NA;FALSE
+CU_GLD_SULFONYLUREA;TF;TRUE;Glucose-lowering medication;NA;NA;NA;FALSE
+CU_AINES;TF;TRUE;Non-steroidal anti-inflammatory drugs;NA;NA;NA;FALSE
+CU_PSYCHOTROPICS;TF;TRUE;Psychotropics;NA;NA;NA;FALSE
+CU_CV_STATIN;TF;TRUE;Statins;NA;NA;NA;FALSE
+CU_AC_DOAC;TF;TRUE;Novel oral anticoagulants;NA;NA;NA;FALSE
+CU_AC_WARFARIN;TF;TRUE;Warfarin;NA;NA;NA;FALSE
+SV_VP_OTHER;TF;TRUE;Influenza;NA;NA;Vaccines;FALSE

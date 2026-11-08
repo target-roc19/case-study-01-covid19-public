@@ -1,0 +1,50 @@
+{
+  "data_model": "ConcePTION",
+  "operations_path": "R",
+  "file_format": "csv",
+  "operations": {
+    "DuplicateRemover": true,
+    "MissingRemover": true,
+    "UniqueIdGenerator": true
+  },
+  "cdm_tables_names": [
+    "PERSONS",
+    "VACCINES",
+    "OBSERVATION_PERIODS",
+    "MEDICAL_OBSERVATIONS",
+    "MEDICINES",
+    "EVENTS",
+    "SURVEY_OBSERVATIONS",
+    "VISIT_OCCURRENCE",
+    "PROCEDURES"
+  ],
+  "duplicate_remover": {
+    "save_deleted": false,
+    "to_view" : true,
+    "cdm_tables_columns": {
+        "PERSONS": "*"
+    },
+    "schema_name" : "ConcePTION"
+  },
+  "unique_id_generator": {
+    "order_by_cols": [],
+    "instance_name": "",
+    "schema_name" : "ConcePTION",
+    "to_view" : true
+  },
+  "missing_remover": {
+    "columns": {
+      "PERSONS": ["person_id"],
+      "VACCINES": ["person_id"],
+      "OBSERVATION_PERIODS": ["person_id"],
+      "MEDICAL_OBSERVATIONS": ["person_id"],
+      "MEDICINES": ["person_id"],
+      "EVENTS": ["person_id"],
+      "SURVEY_OBSERVATIONS": ["person_id"],
+      "VISIT_OCCURRENCE": ["person_id"],
+      "PROCEDURES": ["person_id"]
+    },
+    "to_view" : true,
+    "schema_name" : "ConcePTION"
+  }
+}

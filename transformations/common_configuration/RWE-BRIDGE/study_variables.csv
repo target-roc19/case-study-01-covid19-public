@@ -1,0 +1,91 @@
+variable_id,concept_id,raw_concept,exposure,outcome,covariate,eligibility,missing_set_to,data_type,start_look_back,end_look_back,date_extraction_func,variable_description
+SV_AGE,PP_AGE,D3,FALSE,FALSE,TRUE,TRUE,NULL,INT,-999999,0,LATEST,age
+SV_SEX,PP_SEX,D3,FALSE,FALSE,TRUE,TRUE,FALSE,BOOL,-999999,0,LATEST,sex
+SV_DEATH_ANYCAUSE,PP_ANYDEATH,D3,FALSE,TRUE,FALSE,FALSE,FALSE,BOOL,0,516,EARLIEST,Any cause of death from D3_PERSONS. Keep the date of the D3.
+SV_DEATH_REG,PP_DEATH_REGISTRY,concept codelist,FALSE,TRUE,FALSE,FALSE,FALSE,BOOL,0,516,EARLIEST,Death due to COVID19 with a code from 'death registry' as meaning variable in EVENTS. Keep the date of the event in the death registry.
+SV_DEATH_COMBINED,PP_DEATH_COMBINED,concept preprocessing,FALSE,TRUE,FALSE,FALSE,FALSE,BOOL,0,516,EARLIEST, Death due to COVID19 with a code for covid diagnosis (in EVENTS) AND death from D3_PERSONS (in this order from the day of diagnosis). Here the codelist should be I_COVID19DX_COV instead. Keep the date of D3
+SV_VP_TARGET_COVID,VP_TARGET_COVID,dap_specific_concept,TRUE,FALSE,FALSE,FALSE,FALSE,BOOL,0,427,LATEST,BNT162b2 mRNA COVID-19 vaccine
+SV_VP_NONTARGET_COVID,VP_NONTARGET_COVID,dap_specific_concept,FALSE,FALSE,TRUE,FALSE,NULL,CHAR,-184,516,LATEST,Exclusion criteria: non-target covid-19 vaccines
+SV_PRIOR_PREP_COVID,DP_TIXACILGA,drug codelist,FALSE,FALSE,TRUE,TRUE,FALSE,BOOL,-184,0,LATEST,Exclusion criteria: pre-exposure profilaxis
+SV_POST_PREP_COVID,DP_TIXACILGA,drug codelist,FALSE,FALSE,TRUE,FALSE,,BOOL,0,516,LATEST,Intecurrent event
+SV_IMMUNOCOMPROMISED,PP_IMMUNOCOMPROMISED,concept preprocessing,FALSE,FALSE,TRUE,TRUE,FALSE,BOOL,-184,0,LATEST,Exclusion criteria: immunocompromised status 
+SV_HOSP_6WEEKS,PP_HOSP_6WEEKS,concept preprocessing,FALSE,FALSE,TRUE,TRUE,FALSE,BOOL,-42,0,LATEST,Exclusion criteria: record of hospitalization within six weeks prior
+SV_COVID_POSTEST,PP_COVID_POSTEST,concept preprocessing,FALSE,TRUE,FALSE,FALSE,0,BOOL,0,516,LATEST,Laboratory-confirmed SARS-CoV-2 infection
+SV_COVID_ANYTEST,PP_COVID_ANYTEST,concept preprocessing,FALSE,TRUE,FALSE,FALSE,0,BOOL,0,516,LATEST,Laboratory test for SARS-CoV-2 infection
+SV_VP_OTHER,PP_VP_INF,dap_specific_concept,FALSE,FALSE,TRUE,FALSE,,BOOL,-184,0,LATEST,Non-COVID-19 vaccine: Influenza vaccine
+SV_HYPERTENSION,PP_HYPERTENSION,concept preprocessing,FALSE,FALSE,TRUE,FALSE,,BOOL,-184,0,LATEST,Hypertension
+SV_SICKLECELL,PP_SICKLECELL,concept preprocessing,FALSE,FALSE,TRUE,FALSE,,BOOL,-184,0,LATEST,Sickle cell disease
+SV_HIV,PP_HIV,concept preprocessing,FALSE,FALSE,TRUE,FALSE,,BOOL,-184,0,LATEST,HIV
+SV_CANCER,PP_CANCER,concept preprocessing,FALSE,FALSE,TRUE,FALSE,,BOOL,-184,0,LATEST,Cancer
+SV_CKD,PP_CKD,concept preprocessing,FALSE,FALSE,TRUE,FALSE,,BOOL,-184,0,LATEST,Chronic Kidney Disease
+SV_CRD,PP_CRD,concept preprocessing,FALSE,FALSE,TRUE,FALSE,,BOOL,-184,0,LATEST,Chronic Respiratory Disease
+SV_CVD,PP_CVD,concept preprocessing,FALSE,FALSE,TRUE,FALSE,,BOOL,-184,0,LATEST,Cardiovascular disease
+SV_DIABETES12,PP_ANY_DM,concept preprocessing,FALSE,FALSE,TRUE,FALSE,,BOOL,-184,0,LATEST,Diabetes mellitus (type 1 and 2)
+PRIOR_MYOCARDIAL_INFARCT,C_AMI_AESI,concept codelist,FALSE,FALSE,TRUE,FALSE,,BOOL,-184,0,LATEST,Myocardial infarct
+PRIOR_CHF,C_HF_COV,concept codelist,FALSE,FALSE,TRUE,FALSE,,BOOL,-184,0,LATEST,Congestive heart failure
+PRIOR_PVD,V_PERIPHVD_COV,concept codelist,FALSE,FALSE,TRUE,FALSE,,BOOL,-184,0,LATEST,Peripheral vascular disease
+PRIOR_CEREBROVASCULAR_DISEASE,N_CEREBROVASC_COV,concept codelist,FALSE,FALSE,TRUE,FALSE,,BOOL,-184,0,LATEST,Cerebrovascular disease
+PRIOR_DM_NOCOMPLICATIONS,E_DIABETESNOCOMPLICATIONS_COV,concept codelist,FALSE,FALSE,TRUE,FALSE,,BOOL,-184,0,LATEST,Diabetes without complications
+PRIOR_DM_WITHCOMPLICATIONS,E_DMCOMPL_COV,concept codelist,FALSE,FALSE,TRUE,FALSE,,BOOL,-184,0,LATEST,Diabetes with complications
+PRIOR_INFLUENZA_RESPINF,PP_INFLUENZA_RESINF,concept codelist,FALSE,FALSE,TRUE,FALSE,,BOOL,-184,0,LATEST,Influenza or other respiratory infections 
+PRIOR_MILD_LD,D_MILDLIVERDISEASE_COV,concept codelist,FALSE,FALSE,TRUE,FALSE,,BOOL,-184,0,LATEST,Mild liver disease
+PRIOR_MOD_SEV_LD,D_MODERATESEVERLIVERDISEASE_COV,concept codelist,FALSE,FALSE,TRUE,FALSE,,BOOL,-184,0,LATEST,Moderate or severe liver disease
+PRIOR_PEPTICULCER,D_PEPTICULCER_COV,concept codelist,FALSE,FALSE,TRUE,FALSE,,BOOL,-184,0,LATEST,Peptic ulcer disease
+PRIOR_CLD,PP_LIVERCHRONIC,concept codelist,FALSE,FALSE,TRUE,FALSE,,BOOL,-184,0,LATEST,Liver Chronic disease
+PRIOR_MILD_MOD_KD,G_MILDMODERATERENALDISEASE_COV,concept codelist,FALSE,FALSE,TRUE,FALSE,,BOOL,-184,0,LATEST,Mild to moderate kidney disease
+PRIOR_SEV_KD,G_SEVERERENALDISEASE_COV,concept codelist,FALSE,FALSE,TRUE,FALSE,,BOOL,-184,0,LATEST,Severe kidney disease
+PRIOR_DEMENTIA,N_DEMENTIA_COV,concept codelist,FALSE,FALSE,TRUE,FALSE,,BOOL,-184,0,LATEST,Dementia
+PRIOR_HEMIPLEGIA,N_HEMIPLEGCHARLSON_COV,concept codelist,FALSE,FALSE,TRUE,FALSE,,BOOL,-184,0,LATEST,Hemiplegia
+PRIOR_RHEUMATICDISEASE,M_RHEUMATICDISEASE_COV,concept codelist,FALSE,FALSE,TRUE,FALSE,,BOOL,-184,0,LATEST,Rheumatic disease
+PRIOR_ANY_MALIGNANCY_NONMETASTATIC,ONC_ANYMALIGNANCY_COV,concept codelist,FALSE,FALSE,TRUE,FALSE,,BOOL,-184,0,LATEST,Any malignancy
+PRIOR_METASTASIS,ONC_METASTATICSOLIDTUMOR_COV,concept codelist,FALSE,FALSE,TRUE,FALSE,,BOOL,-184,0,LATEST,Metastatic solid tumor
+PRIOR_AUTOIMMUNE_DISORDERS,PP_AUTOIMMUNE,concept codelist,FALSE,FALSE,TRUE,FALSE,,BOOL,-184,0,LATEST,Autoimmune disorders
+PRIOR_AIDS,I_AIDS_COV,concept codelist,FALSE,FALSE,TRUE,FALSE,,BOOL,-184,0,LATEST,AIDS
+PRIOR_ANAPHYLAXIS,IM_ANAPHYLAXIS_AESI,concept codelist,FALSE,FALSE,TRUE,FALSE,,BOOL,-184,0,LATEST,History of anaphylaxis
+PRIOR_ALLERGIES,PP_ALLERGY,concept codelist,FALSE,FALSE,TRUE,FALSE,,BOOL,-184,0,LATEST,History of allergies 
+SV_SES,SES_STATUS,dap_specific_concept,FALSE,FALSE,TRUE,TRUE,,CHAR,-999999,0,LATEST,Socio-economic status
+SV_CDC_RISK,PP_CDC_RISK,concept preprocessing,FALSE,FALSE,TRUE,TRUE,0,CHAR,-184,0,LATEST,CDC-risk
+SV_HU_PC_CONTACT,HU_GP_CONTACT,dap_specific_concept,FALSE,FALSE,TRUE,FALSE,0,INT,-184,0,range_count,Healthcare utilization: primary care
+SV_HU_HOSP_CONTACT,PP_HU_HOSP_CONTACT,concept preprocessing,FALSE,FALSE,TRUE,FALSE,0,INT,-184,0,LATEST,Healthcare utilization: hospitalisation
+SV_SMOKING,PP_SMOKING_CAT,concept preprocessing,FALSE,FALSE,TRUE,TRUE,0,INT,-184,0,LATEST,smoking status
+SV_BMI,PP_BMI_CAT,concept preprocessing,FALSE,FALSE,TRUE,FALSE,0,CHAR,-184,0,LATEST,BMI
+SV_PREG_STATUS,PP_PREG_STATUS,concept preprocessing,FALSE,FALSE,TRUE,TRUE,FALSE,BOOL,-184,0,LATEST,pregnancy status
+SV_CCI,PP_CHARLSON_INDEX,concept preprocessing,FALSE,FALSE,TRUE,FALSE,0,CHAR,-184,0,LATEST,Charlson Comorbidity Index (CCI)
+CU_GLD_SULFONYLUREA,DP_SULFONYLUREA,drug codelist,FALSE,FALSE,TRUE,FALSE,,BOOL,-184,0,LATEST,A10BB Ñ SulfonylureasÊ
+CU_GLD_BIGUANIDE,DP_BIGUANIDE,drug codelist,FALSE,FALSE,TRUE,FALSE,,BOOL,-184,0,LATEST,A10BA Ñ BiguanidesÊ
+CU_GLD_ALPHAGLUCOS,DP_ALPHAGLUCOS,drug codelist,FALSE,FALSE,TRUE,FALSE,,BOOL,-184,0,LATEST,A10BF Ñ Alpha-glucosidase inhibitorsÊ
+CU_GLD_THIAZOLIDINE,DP_THIAZOLIDINE,drug codelist,FALSE,FALSE,TRUE,FALSE,,BOOL,-184,0,LATEST,A10BG Ñ ThiazolidinedionesÊ
+CU_GLD_OTHER_ORAL,DP_OTHER_GLD,drug codelist,FALSE,FALSE,TRUE,FALSE,,BOOL,-184,0,LATEST,A10BX Ñ Other oral GLDsÊ
+CU_GLD_INSULIN,DP_INSULIN,drug codelist,FALSE,FALSE,TRUE,FALSE,,BOOL,-184,0,LATEST,A10A* ÑÊInsulins and analoguesÊ
+CU_CV_ACE_ARB,DP_ACE_ARB,drug codelist,FALSE,FALSE,TRUE,FALSE,,BOOL,-184,0,LATEST,C09AÐC09D Ñ ACE inhibitors / ARBsÊ
+CU_CV_BETABLOCK,DP_BETABLOCK,drug codelist,FALSE,FALSE,TRUE,FALSE,,BOOL,-184,0,LATEST,C07 Ñ Beta-blocking agentsÊ
+CU_CV_THIAZIDE,DP_THIAZIDE,drug codelist,FALSE,FALSE,TRUE,FALSE,,BOOL,-184,0,LATEST,C03A Ñ Thiazide diureticsÊ
+CU_CV_LOOP_DIURETIC,DP_LOOP_DIURETIC,drug codelist,FALSE,FALSE,TRUE,FALSE,,BOOL,-184,0,LATEST,C03C Ñ High-ceiling diureticsÊ
+CU_CV_ALDOSTERONE,DP_ALDOSTERONE,drug codelist,FALSE,FALSE,TRUE,FALSE,,BOOL,-184,0,LATEST,C03D Ñ Aldosterone antagonistsÊ
+CU_CV_CALCIUMBLOCK,DP_CALCIUMBLOCK,drug codelist,FALSE,FALSE,TRUE,FALSE,,BOOL,-184,0,LATEST,C08 Ñ Calcium channel blockersÊ
+CU_CV_GLYCOSIDE,DP_GLYCOSIDE,drug codelist,FALSE,FALSE,TRUE,FALSE,,BOOL,-184,0,LATEST,C01A Ñ Cardiac glycosidesÊ
+CU_CV_ANTIARRHYTHM,DP_ANTIARRHYTHM,drug codelist,FALSE,FALSE,TRUE,FALSE,,BOOL,-184,0,LATEST,C01BÐC01D Ñ AntiarrhythmicsÊ
+CU_CV_STATIN,DP_STATIN,drug codelist,FALSE,FALSE,TRUE,FALSE,,BOOL,-184,0,LATEST,C10AA Ñ StatinsÊ
+CU_AC_WARFARIN,DP_WARFARIN,drug codelist,FALSE,FALSE,TRUE,FALSE,,BOOL,-184,0,LATEST,B01AA Ñ Vitamin K antagonists (warfarin)Ê
+CU_AC_DOAC,DP_AC_DOAC,drug codelist,FALSE,FALSE,TRUE,FALSE,,BOOL,-184,0,LATEST,B01AF Ñ Direct oral anticoagulants (optional)Ê
+CU_AC_ANTIPLATELET,DP_ANTIPLATELET,drug codelist,FALSE,FALSE,TRUE,FALSE,,BOOL,-184,0,LATEST,"B01AC Ñ Antiplatelets (aspirin, P2Y12 inhibitors, others)Ê"
+CU_CORTICOSTEROIDS,DP_CORTICOST,drug codelist,FALSE,FALSE,TRUE,FALSE,,BOOL,-184,0,LATEST,H02AB Ñ Systemic corticosteroidsÊ
+CU_ANALGESICS,DP_ANALGESIC,drug codelist,FALSE,FALSE,TRUE,FALSE,,BOOL,-184,0,LATEST,Analgesics
+CU_ANTIBIOTICS,DP_ANTIBIO,drug codelist,FALSE,FALSE,TRUE,FALSE,,BOOL,-184,0,LATEST,Antibiotics
+CU_ANTIVIRAL,DP_ANTIVIR,drug codelist,FALSE,FALSE,TRUE,FALSE,,BOOL,-184,0,LATEST,Antiviral medications
+CU_AINES,DP_NSAID,drug codelist,FALSE,FALSE,TRUE,FALSE,,BOOL,-184,0,LATEST,Non-steroidal anti-inflammatory drugs
+CU_PSYCHOTROPICS,DP_PSYCH,drug codelist,FALSE,FALSE,TRUE,FALSE,,BOOL,-184,0,LATEST,Psychotropics
+CU_WL_WEIGHTLOSS,DP_WEIGHTLOSS,drug codelist,FALSE,FALSE,TRUE,FALSE,,BOOL,-184,0,LATEST,A08A Ñ Weight-loss drugsÊ
+SV_HOSP_LENGTH,PP_HOSP_LENGTH,concept preprocessing,FALSE,FALSE,TRUE,FALSE,,BOOL,0,516,LATEST,Number of days individuals stayed in hospital for the calculation of IPCW
+AGE_16_OR_OLDER,PP_AGE_16_OR_OLDER,concept preprocessing,FALSE,FALSE,TRUE,TRUE,FALSE,BOOL,-999999,0,LATEST,Age 16 or older
+ENROLLED_6_MONTHS,PP_ENROLLED_6_MONTHS,concept preprocessing,FALSE,FALSE,TRUE,TRUE,FALSE,BOOL,-999999,0,LATEST,Enrolled for at least 6 months prior to index date
+STABLE_PRECONDITIONS,,composite,FALSE,FALSE,TRUE,TRUE,FALSE,BOOL,-42,0,LATEST,Stable preconditions: no hospitalization within 6 weeks prior to index date
+PREV_OTHER_COVID_VAC,PP_PREV_OTHER_COVID,concept preprocessing,FALSE,FALSE,TRUE,TRUE,FALSE,BOOL,-999999,0,LATEST,Previous other COVID-19 vaccination
+PRIOR_PFIZER_VAC,PP_PRIOR_PFIZER_VAC,concept preprocessing,FALSE,FALSE,TRUE,TRUE,FALSE,BOOL,-999999,0,LATEST,Ever received target Pfizer/BioNTech COVID-19 vaccine prior to index date
+SV_REGION,REGION,dap_specific_concept,FALSE,FALSE,TRUE,TRUE,0,CHAR,-999999,0,LATEST,Region of residence
+SV_HU_CONTACT,PP_HU_CONTACT,concept preprocessing,FALSE,FALSE,FALSE,TRUE,FALSE,BOOL,-999999,0,range_count,Healthcare utilization: any contact with healthcare system
+RECEIVES_EXPOSURE,PP_RECEIVES_EXPOSURE,concept preprocessing,FALSE,FALSE,TRUE,TRUE,FALSE,BOOL,0,0,LATEST,Received exposure to target COVID-19 vaccine (BNT162b2) at index date
+ie1_second_dose_target_exposed,PP_IE1_SECOND_DOSE_EXP,concept preprocessing,FALSE,FALSE,FALSE,FALSE,FALSE,DATE,-999999,0,EARLIEST,Received second dose of target COVID-19 vaccine (BNT162b2) within 90 days after index date
+ie2_third_dose_or_booster_exposed,PP_IE2_THIRD_DOSE_EXP,concept preprocessing,FALSE,FALSE,FALSE,FALSE,FALSE,DATE,-999999,0,EARLIEST,Received third dose or booster of target COVID-19 vaccine (BNT162b2) within 90 days after index date
+ie3_first_dose_covid_nontarget_exposed,PP_IE3_FIRST_DOSE_NONTARGET_EXP,concept preprocessing,FALSE,FALSE,FALSE,FALSE,FALSE,DATE,-999999,0,EARLIEST,Received first dose of non-target COVID-19 vaccine within 90 days after index date
+ie3_first_dose_covid_any_control,PP_IE3_FIRST_DOSE_ANY_CONTROL,concept preprocessing,FALSE,FALSE,FALSE,FALSE,FALSE,DATE,-999999,0,EARLIEST,Received first dose of any COVID-19 vaccine within 90 days after index date
