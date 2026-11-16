@@ -59,10 +59,14 @@ Each data object in the pipeline is documented in a corresponding **codebook** w
 - The `docs/codebook` folder contains the study codebooks describing each intermediate data object
 - The `transformations/common_configuration/RWE-BRIDGE` folder contains all project metadata, including events, medicines and vaccine codelists used in the study, as well as other metadata files specifying definitions of study concepts and variables. 
 
+### Codelist
+
+The analysis pipeline uses a `codelist` to identify records in the source data relevant to the study objectives. This codelist, its authors, and the appropriate citation has its own DOI: [10.5281/zenodo.21219396](https://zenodo.org/records/21219396)
+
 ### Dummy Data
 - Test data for a number of intermediate data objects can be found in `tests/testthat/test_data`
 - Setting `test_mode: TRUE` in `configuration/config_project.yaml` generates dummy data for the eligible population data object while running the pipeline.
-- Synthetic CDM will be made available soon
+- Synthetic CDM is at the moment available on request from the case study team (contact details below).
 
 
 ### How to Run
@@ -94,11 +98,11 @@ For questions or support, contact:
 - Case Study Leads
     - Epidemiologist: Constanza Andaur Navarro
     - Email: C.L.AndaurNavarro@umcutrecht.nl
-    - Statistician: Oisin Ryan
+    - Statistician: Oisín Ryan
+- Programming Team
+    - Organisation: University Medical Center Utrecht
+    - Email: wp2.targeteu@umcutrecht.nl
     - Email: O.Ryan@umcutrecht.nl
 - Lead Programmer
     - Name: Sebastian Mildiner Moraga
     - Email: s.mildinermoraga@umcutrecht.nl
-- Programming Team
-    - Organisation: University Medical Center Utrecht
-    - Email: wp2.targeteu@umcutrecht.nl
